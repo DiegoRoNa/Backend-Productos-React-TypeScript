@@ -27,7 +27,8 @@ const server = express()
 const corsOptions : CorsOptions = {
     // QUE ES LO QUE ME ESTÁ ENVIANDO LA PETICION
     origin: function(origin, callback) { // origin, es el dominio origen de la peticion. callback, configura los permisos
-        
+        console.log(origin)
+        console.log(process.env.FRONTEND_URL)
         if (origin === process.env.FRONTEND_URL) {
             callback(null, true) // permitir la conexion
         } else {
